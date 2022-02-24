@@ -58,23 +58,6 @@ def poi_rec():
     res = handler_dict["poi"].get(kwargs)
     return res
 
-@app.route("/poi-top-rec", methods=["GET", "POST"])
-def poi_top_rec():
-    kwargs = request.args if request.method == "GET" else request.json
-    res = handler_dict["poi_top"].get(kwargs)
-    return res
-
-@app.route("/get-geo-info", methods=["GET", "POST"])
-def geo_info():
-    kwargs = request.args if request.method == "GET" else request.json
-    res = handler_dict["geo_info"].get(kwargs)
-    return res
-
-@app.route("/cluster-poi", methods=["GET", "POST"])
-def cluster_poi():
-    kwargs = request.args if request.method == "GET" else request.json
-    res = handler_dict["cluster_poi"].get(kwargs)
-    return res
 
 if __name__ == '__main__':
     app.run(**config.server)
